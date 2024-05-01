@@ -38,23 +38,32 @@ You choose which to use by following these:
 
 > Note: The `^` in these function declaration is a replacement for this: `{genericTypeName}_{selectedType}`. Example: if you invoked CREATE_ARRAY_TYPE(int), `^` will be `staticArray_int`.
 
-### andaCreateNewArray_^(int length)
+### void *andaCreateNewArray_^(int length)
 
 Creates a new array object of the specified type and specified length.
 
-### andaDeleteArray_^(void* array)
+### void andaDeleteArray_^(void* array)
 
 Deletes a created array.
 
-### andaGetElementArray_^(void* array, int index)
+### type andaGetElementArray_^(void* array, int index)
 
 Gets an element from the array.
 
 If `index` is < 0 or >= current index, this will fail, because you will try to get an item, that isn't yet added.
 
-### andaAddElementArray_^(void* array, type element)
+### void andaAddElementArray_^(void* array, type element)
 
 Adds an element to the array.
 
 If the current index of the array is >= length of the array, this will fail, because you would write out of the array.
 
+## Non-generated Functions
+
+### const char* andaGetArrayType(void* array)
+
+Gets the type of the generic used for this array. *Internal use only!*
+
+### int andaGetArrayLength(void *array)
+
+Gets the length of the array.

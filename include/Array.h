@@ -62,8 +62,7 @@ int andaGetArrayLength(void *array)
     assert(array);
 
     char *conv = (char *) array;
-    while (*(conv++) != '\0');
-
+    conv += sizeof(char *);
     return *(conv);
 }
 

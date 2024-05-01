@@ -12,6 +12,8 @@ int main(void)
     for (int i = 1; i <= ARR_MAX; ++i)
         andaAddElementArray_staticArray_int(arr, i * 2);
 
+    printf("%d\n", andaGetArrayLength(arr));
+
     printf("| ");
 
     for (int i = 0; i < ARR_MAX; ++i)
