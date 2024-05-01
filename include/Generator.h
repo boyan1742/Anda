@@ -6,8 +6,8 @@
 #define GENERATE_GENERIC_FUNCTION_NAME_OBJECT(funcName, type, name) funcName ## _ ## name ## _ ## type
 #define GENERATE_GENERIC_FUNCTION_NAME_STANDALONE(funcName, type) funcName ## _ ## type
 
-#define GENERATE_GENERIC_FUNCTION_OBJECT(funcName, type, genericName, returnType, args, body) returnType GENERATE_GENERIC_FUNCTION_NAME_OBJECT(funcName, type, genericName) (args) { body }
-#define GENERATE_GENERIC_FUNCTION_STANDALONE(funcName, type, returnType, args, body) returnType GENERATE_GENERIC_FUNCTION_NAME_STANDALONE(funcName, type) (args) { body }
+#define GENERATE_GENERIC_FUNCTION_OBJECT(funcName, type, genericName, returnType, args, body) returnType GENERATE_GENERIC_FUNCTION_NAME_OBJECT(funcName, type, genericName) args { body }
+#define GENERATE_GENERIC_FUNCTION_STANDALONE(funcName, type, returnType, args, body) returnType GENERATE_GENERIC_FUNCTION_NAME_STANDALONE(funcName, type) args { body }
 
 #define GENERIC_BEGIN(type, name) struct GENERIC_NAME(type, name) {
 #define GENERIC_END }
